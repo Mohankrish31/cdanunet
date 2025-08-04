@@ -1,0 +1,10 @@
+from your_model_file import CDAN_UNet  # Replace with your actual model file name
+import torch
+import os
+# Create model instance
+model = CDAN_UNet(in_channels=3, out_channels=3, base_ch=64)  # Use your actual constructor
+# Define dummy weight path
+dummy_weights_path = "cdandense.pt"
+# Save the randomly initialized weights
+torch.save(model.state_dict(), dummy_weights_path)
+print(f"Saved dummy pretrained model to {dummy_weights_path}")
